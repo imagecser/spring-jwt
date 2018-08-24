@@ -1,21 +1,16 @@
 package com.zsuun.springjwt.service;
 
-import com.zsuun.springjwt.entity.User;
-import com.zsuun.springjwt.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.zsuun.springjwt.domain.entity.User;
 
-@Service
-public class UserService {
+import java.util.List;
 
-    @Autowired
-    private UserRepository userRepository;
+public interface UserService {
 
-    public void saveUser(User user) {
-        userRepository.save(user);
-    }
+    User saveUser(User user);
 
-    public User findUserByUsername(String username) {
-        return userRepository.findByUsername(username);
-    }
+    User findUserByUsername(String username);
+
+    List<User> findAllUser();
+
+    void deleteUser(String username);
 }

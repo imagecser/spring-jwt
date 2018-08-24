@@ -1,9 +1,10 @@
-package com.zsuun.springjwt.entity;
+package com.zsuun.springjwt.domain.entity;
 
 import com.sun.istack.internal.NotNull;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 
 @Entity
 public class User {
@@ -17,6 +18,7 @@ public class User {
     private String nickName;
 
     @NotNull
+    @Email
     private String email;
 
     public String getUsername() {
